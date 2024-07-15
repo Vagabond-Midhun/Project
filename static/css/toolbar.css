@@ -1,0 +1,52 @@
+body{
+    background-image: url('image/bg3.webp');
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    margin: 0px;
+}
+main{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+h1{
+    height: 5px;
+    text-align: center;
+}
+
+.btn{
+    background: rgb(226, 219, 219);
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #d4e3e8;
+    font-weight: 600;
+    float: right;
+    a:link {text-decoration: none};
+}
+
+.navbar ul{
+    background: transparent;
+    list-style-type: none;
+    
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+.navbar a:hover{
+    background-color: rgb(66, 12, 12);
+}
+.navbar li{
+    float: left;
+}

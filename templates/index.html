@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viweport" content="width=device-width, initial-scale-1.0">
+    
+    <title> TODO LIST </title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ url_for('index') }}">HOME</a>
+            </li>
+            <li>
+                <a href="{{ url_for('Signin') }}">Signin</a>
+            </li>
+            <li>
+                <a href="{{ url_for('Reg')}}">Register</a>
+            </li>
+        </ul>
+        <h1> TODO LIST</h1>
+    </nav>
+    {% block body %}
+
+    {% endblock %}
+</body>
+</html>
