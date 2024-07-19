@@ -167,4 +167,11 @@ main{
     width: 40%;
 }
 
-
+.log_out button{
+    float: right;
+    text-decoration: none;
+    padding: 25px;
+    
+    text-align: center;
+    background: transparent;
+}
