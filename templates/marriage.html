@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/h.css') }}">
+</head>
+<body>
+    <div>
+    <header class="header">
+       <nav>
+            <ul class="list">
+                <li class="navbar"><a href="main">HOME</a></li>
+                <li class="navbar"><a href="profile">Profile</a></li>
+                <li class="navbar"><a href="#">Creation</a></li>
+                <li class="navbar"><a href="#">Search</a></li>
+                <li class="log_out"><a href="Signin">LOG OUT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br><br><br><br><br>
+    <main>
+        <h1 class=" boarder padding">MARRIAGE</h1>
+        <section class="flex-col wrapper flex ">
+            
+                <div >
+                    <div class="main">
+                        <img class="float-l padding-right-50" src="{{url_for('static',filename='hd1.jpg')}}" width="400px" height="600px">
+                    </div>
+           
+                 
+                    <div>
+                        <div>
+                            
+                                <h1>About:</h1>
+                                   
+                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis natus repudiandae odio dolorum quo inventore id nam temporibus voluptas autem excepturi delectus, libero suscipit facilis corporis, minus aliquam sit provident!
+                                Molestias accusamus recusandae incidunt rem possimus? Minima ut laboriosam quos delectus voluptatibus? Recusandae rem quod modi dignissimos dolore consequuntur voluptates esse voluptatibus. Rerum ab quas sapiente, excepturi nulla earum quia!
+                                Distinctio voluptatum maxime sed. Sed molestias esse adipisci amet </h5>
+                              
+                            <br>
+                        </div>
+                        <div>
+                            <h1>Time:</h1>
+                            <div class="flex gap-1">
+                                <div>
+                                    <img src="{{url_for('static',filename='alarm.png')}}" width="35px">
+                                </div>
+                                <div>
+                                    <h3>Today  9am</h3>
+                                    <h3>Today  1pm</h3>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h2>VENUE:</h2>
+                                <div class="flex gap-1">
+                                    <div>
+                                        <img src="{{url_for('static',filename='ping.png')}}" width="35px"> 
+                                    </div>
+                                    <div>
+                                        <h3>Sumangali auditorium, Near Ammachivede Kollam</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
+                </div>    
+           
+                
+           
+        </section>
+        <div>
+            <h1>No Releted Events</h1>
+            <div class="related">
+                <section>
+
+                </section>
+                
+            </div>
+        </div>
+    </main>
+
+    </div>
+    
+    
+</body>
+</html>

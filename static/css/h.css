@@ -1,1 +1,170 @@
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+html{
+    height: 100%;
+}
+body{
+    background: rgb(208, 12, 143);
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    margin: 0px;
+}
+
+header{
+    
+    position: fixed;
+    width: 100%;
+}
+main{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+.list{
+    list-style-type: none;
+    background: transparent;
+    
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 25px;
+    display: block;
+    text-align: center;
+}
+.navbar :hover{
+    background-color: rgb(66, 12, 12);
+    transform: translateY(-20px);
+
+}
+.navbar{
+    float: left;
+    text-decoration: none;
+}
+.navbar-brand{
+    padding-top: 60px;
+    font-weight: bold;
+    font-size: 50px;
+    padding-left: 20px;
+    font-style: italic;
+}
+.log_out a{
+    color: white;
+    text-decoration: none;
+    padding: 25px;
+    display: block;
+    float: right;
+    list-style: none;
+    
+}
+.log_out :hover{
+    background-color: rgb(66, 12, 12);
+    transform: translateY(-20px);
+}
+.boarder{
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+}
+
+.float-l{
+    float: left;
+}
+.padding{
+    padding: 30px;
+    
+}
+.float-r{
+    float: right;
+}
+.padding-top-50{
+    padding-top:50px;
+    
+}
+.padding-top-20{
+    padding-top: 20px;
+    
+}
+.padding-left-50{
+    padding-left: 50px;
+    
+}
+.padding-right-50{
+    padding-right: 50px;
+}
+
+
+.padding-right-125{
+    padding-right: 125px;
+}
+.margin-left-50{
+    margin-left: 50px;
+}
+.flex{
+    display: flex;
+}
+.grid{
+    display: grid;
+}
+.wrapper{
+    max-width: 100%;
+    background: transparent;
+    width: 100%;
+    backdrop-filter: blur(9px);
+    color: #fff;
+    border-radius: 12px;
+    padding: 30px 0px;
+    float: right;
+  }
+.flex-col{
+    flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
+.flex-w{
+    width:100%;
+} 
+
+.h-full{
+    height: 10%;
+}
+.main img{
+    width: 60%;
+    height: 60%;
+}
+@media all and (max-width: 940px){
+    .main img{
+        width:100%;
+    }
+}
+.flex-w-80{
+    width:80%;
+    height: 80%;
+}
+.related{
+    background-color: beige;
+    text-align: center;
+}
+.gap-1 {
+    gap: 10px;
+}
+.gap-2 {
+    gap: 50px;
+}
+.try{
+    width: 100%;
+    display: flex;
+}
+.flex-w-30{
+    width: 40%;
+}
+
 

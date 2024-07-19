@@ -23,5 +23,17 @@ def main():
 def base():
     return render_template('base.html')
 
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+@app.route('/marriage')
+def marriage():
+    return render_template('marriage.html')
+
+@app.route('/password')
+def password():
+    return render_template('password.html')
+
 if __name__ == '__main__':
     app.run()

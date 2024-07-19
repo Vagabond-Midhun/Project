@@ -57,26 +57,8 @@
     font-size: 20px;
   
   }
-  .wrapper .remember-forgot{
-    display: flex;
-    justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0 15px;
-  }
-  .remember-forgot label input{
-    accent-color: #fff;
-    margin-right: 3px;
   
-  }
-  .remember-forgot a{
-    color: #fff;
-    text-decoration: none;
-  
-  }
-  .remember-forgot a:hover{
-    text-decoration: underline;
-  }
-  .wrapper .btn{
+  .terms .btn{
     width: 100%;
     height: 45px;
     background: #fff;
@@ -89,17 +71,111 @@
     color: #333;
     font-weight: 600;
   }
-  .wrapper .register-link{
-    font-size: 14.5px;
-    text-align: center;
-    margin: 20px 0 15px;
+  .Address input{
+    width: 100%;
+    height: 100px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+  }
+  .Address input::placeholder{
+    color: #fff;
+    
+  }
+  .Address i{
+    position: absolute;
+    right: 20px;
+    top: 30%;
+    transform: translate(-50%);
+    font-size: 20px;
   
   }
-  .register-link p a{
+  .terms{
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(9px);
+    color: #fff;
+    border-radius: 12px;
+    padding: 30px 40px;
+  }
+  .terms h1{
+    font-size: 36px;
+    text-align: justify;
+  }
+  .terms .infield{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    
+    margin: 30px 0;
+  }
+  .terms .btn{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+  }
+  .terms .passwords{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    margin: 30px 0;
+  }
+  .passwords input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+  }
+  .passwords input::placeholder{
+    color: #fff;
+  }
+  .passwords i{
+    position: absolute;
+    right: 20px;
+    top: 15%;
+    transform: translate(-50%);
+    font-size: 20px;
+  
+  }
+  .terms .remember-forgot{
+    font-size: 14.5px;
+    text-align: center;
+    
+  
+  }
+  .remember-forgot p a{
     color: #fff;
     text-decoration: none;
     font-weight: 600;
   }
-  .register-link p a:hover{
+  .remember-forgot p a:hover{
     text-decoration: underline;
   }
+  .remember-forgot input{
+    float: inline-end;
+  }
+  
+  
+  
+  
