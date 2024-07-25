@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/h.css') }}">
+</head>
+<body>
+    <div class="flex wrapper flex-col">
+    <div>
+        <a href="main" class="navbar-brand colour-r">Pr0ject-X</a>
+       <nav class="nav colour-m">
+        <div> 
+            <ul class="list">
+                <li class="navbar"><a href="main" class="nav-link">HOME</a></li>
+                <li class="navbar"><a href="profile" class="nav-link">Profile</a></li>
+                <li class="navbar"><a href="#" class="nav-link">Creation</a></li>
+                <li class="navbar"><a href="#" class="nav-link">Search</a></li>
+                <li class="log_out"><a href="logout" class="nav-link">Logout</a></li>
+                
+            </ul>
+        </div>
+        </nav>
+    </div>
+    </div>
+    
+    
+    <h1 class=" wrapper boarder">Medicall Chennai 2024 </h1>
+    <section class=" wrapper ">
+            
+                <div >
+                    <div class="mid">
+                        <img class="float-l padding-right-50" src="{{url_for('static',filename='/css/image/c4.webp')}}" width="600px" height="600px">
+                    </div>
+           
+                 
+                    <div>
+                        <div>
+                            
+                                <h1>About:</h1>
+                                   
+                                <h5>Medicall Chennai is India's leading B2B Medical Equipment Exhibition that connects dealers, distributors, importers, exporters, sales and business development professionals, and entrepreneurs seeking to expand their product portfolios.</h5>
+                                <br>
+                                <h4>Highlights</h4>
+                                <ul>
+                                    <li>Get the best and latest Equipment / Services for the hospital in the Healthcare Industry</li>
+                                    <li>Get dealerships from International Companies and reputed Indian companies</li>
+                                    <li>Attend and participate in thought-provoking conferences and seminars</li>
+                                    <li>Meet collaborating partners</li>
+                                    <li>Popular among visitors for</li>
+                                </ul>
+                            <br>
+                        </div>
+                        <div>
+                            <h1>Time:</h1>
+                            <div class="flex gap-1">
+                                <div>
+                                    <img src="{{url_for('static',filename='/css/image/alarm.png')}}" width="35px">
+                                </div>
+                                <div>
+                                    <h3>02 Aug 2024</h3>
+                                    <h3>04 Aug 2024</h3>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h2>VENUE:</h2>
+                                <div class="flex gap-1">
+                                    <div>
+                                        <img src="{{url_for('static',filename='/css/image/ping.png')}}" width="35px"> 
+                                    </div>
+                                    <div>
+                                        <h3>Chennai Trade Centre, Chennai, India</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
+                </div>    
+    </section>
+    
+    
+    <h1 class=" wrapper boarder">RELATED EVENTS :</h1>
+    <h6>. </h6>
+    <div class="card-container event">
+        
+        <div class="card">
+            <a href="HIMTEE">
+                <img src="{{url_for('static',filename='/css/image/c2.webp')}}">
+            </a>
+            <div class="card-content">
+                <h3><a href="HIMTEE" class="btn">HIMT Engineering Expo 2024</a></h3>
+                <p>The 8th edition of the Hyderabad International Machine Tool & Engineering Expo (HIMTEX) offers an excellent... 
+                </p>
+                <a href="HIMTEE" class="btn">Read more</a>
+            </div>
+        </div>
+        <div class="card">
+            <a href="content3">
+                <img src="{{url_for('static',filename='/css/image/c3.webp')}}" >
+            </a>
+            <div class="card-content">
+                <h3><a href="content3" class="btn">Asian Machine Tool Exhibition 2024</a></h3>
+                <p>AMTEX is the largest trade show in North India for the metal cutting and machine tools industry, providing a marketplace for business, learning, and networking opportunities. Exhibitors can meet 
+                </p>
+                <h6>...</h6>
+                <a href="content3" class="btn">Read more</a>
+            </div>
+        </div>
+        <div class="card">
+            <a href="content7">
+                <img src="{{url_for('static',filename='/css/image/c7.webp')}}">
+            </a>
+            <div class="card-content">
+                <h3><a href="content7" class="btn">Road InfraTech Expo 2024</a></h3>
+                <p>The Road InfraTech Expo is set to be one of the most important roads infrastructure event. The event is set to inspire and encourage knowledge exchange and to showcase innovative technologies, materials, equipment and other
+                </p>
+                
+                <a href="content7" class="btn">Read more</a>
+            </div>
+        </div>
+        
+
+    </div>
+    
+     
+    
+    
+</body>
+</html>

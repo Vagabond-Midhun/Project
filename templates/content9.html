@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/h.css') }}">
+</head>
+<body>
+    <div class="flex wrapper flex-col">
+    <div>
+        <a href="main" class="navbar-brand colour-r">Pr0ject-X</a>
+       <nav class="nav colour-m">
+        <div> 
+            <ul class="list">
+                <li class="navbar"><a href="main" class="nav-link">HOME</a></li>
+                <li class="navbar"><a href="profile" class="nav-link">Profile</a></li>
+                <li class="navbar"><a href="#" class="nav-link">Creation</a></li>
+                <li class="navbar"><a href="#" class="nav-link">Search</a></li>
+                <li class="log_out"><a href="logout" class="nav-link">Logout</a></li>
+                
+            </ul>
+        </div>
+        </nav>
+    </div>
+    </div>
+    
+    
+    <h1 class=" wrapper boarder">Digital Gaming India Expo</h1>
+    <section class=" wrapper ">
+            
+                <div >
+                    <div class="mid">
+                        <img class="float-l padding-right-50" src="{{url_for('static',filename='/css/image/c9.webp')}}" width="600px" height="600px">
+                    </div>
+           
+                 
+                    <div>
+                        <div>
+                            
+                                <h1>About:</h1>
+                                   
+                                <h5>The Digital Gaming India Expo 2023 will bring together the entire eco-system from India and overseas to take the Indian Gaming Industry to the next level. The forum facilitates collaboration amongst gaming companies and showcases institutions working on cutting edge technology, including AR/VR, Blockchain, NFT, Robotics, Digital Gaming, and more.</h5>
+                                <br>
+                                <h4>Highlights</h4>
+                                <ul>
+                                    <li>Startup</li>
+                                    <li>Conference</li>
+                                    <li>Smart City India Awards</li>
+                                    <li>Fine Tech India Innovation Awards</li>
+                                </ul>
+                            <br>
+                        </div>
+                        <div>
+                            <h1>Time:</h1>
+                            <div class="flex gap-1">
+                                <div>
+                                    <img src="{{url_for('static',filename='/css/image/alarm.png')}}" width="35px">
+                                </div>
+                                <div>
+                                    <h3>19 March 2025</h3>
+                                    <h3>21 March 2025</h3>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h2>VENUE:</h2>
+                                <div class="flex gap-1">
+                                    <div>
+                                        <img src="{{url_for('static',filename='/css/image/ping.png')}}" width="35px"> 
+                                    </div>
+                                    <div>
+                                        <h3>Bharat Mandapam, Pragati Maidan, New Delh</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
+                </div>    
+    </section>
+    
+    
+    <h1 class=" wrapper boarder">RELATED EVENTS :</h1>
+    <h6>. </h6>
+    <div class="card-container event">
+        
+        <div class="card">
+            <a href="content8">
+                <img src="{{url_for('static',filename='/css/image/c8.jpeg')}}">
+            </a>
+            <div class="card-content">
+                <h3><a href="content8" class="btn">SUNBURN FESTIVAL</a></h3>
+                <p>in 2007 as a 3 day music festival in Goa, Sunburn has grown to become an aspirational lifestyle brand boasting an eclectic mix of music, entertainment, experiences and celebration that has seeded music tourism in India. Over the past decade, Sunburn has ...
+                </p>
+                <a href="content8" class="btn">Read more</a>
+            </div>
+        </div>
+        <div class="card">
+            <a href="HIMTEE">
+                <img src="{{url_for('static',filename='/css/image/c2.webp')}}">
+            </a>
+            <div class="card-content">
+                <h3><a href="HIMTEE" class="btn">HIMT Engineering Expo 2024</a></h3>
+                <p>The 8th edition of the Hyderabad International Machine Tool... 
+                </p>
+                <a href="HIMTEE" class="btn">Read more</a>
+            </div>
+        </div>
+        <div class="card">
+            <a href="content5">
+                <img src="{{url_for('static',filename='/css/image/c5.webp')}}">
+            </a>
+            <div class="card-content">
+                <h3><a href="content5" class="btn">Interior Expo</a></h3>
+                <h3><a href="content5" class="btn">2024</a></h3>
+                <p>Interior Expo 2024" in concurrent with "Build India 2024", is an exhibition on the Design & Construction in India, organized by   
+                </p>
+                <h6>...</h6>
+                <a href="content5" class="btn">Read more</a>
+            </div>
+        </div>
+        
+
+    </div>
+    
+     
+    
+    
+</body>
+</html>
