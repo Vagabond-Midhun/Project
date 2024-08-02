@@ -4,17 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/h.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/p.css') }}">
     <title>Document</title>
 </head>
 <body>
-    {% extends 'base.html' %}
-
-    {% block content %}
-    <h1>hi</h1>
-
-    
-    
-    {% endblock %}
+    <h2>Profile Page</h2>
+<div>
+    <p>Your account details are below:</p>
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td>{{ account['username'] }}</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>{{ account['password'] }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ account['email'] }}</td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

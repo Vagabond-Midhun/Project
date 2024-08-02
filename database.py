@@ -7,3 +7,4 @@ def get_data():
     result = mycursor.fetchall()
     mydb.close()
     return result
+

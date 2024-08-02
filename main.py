@@ -22,8 +22,27 @@ def login():
     
     
     msg = ''
-   
+
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        
+        
+        username = request.form['username']
+        password = request.form['password']
+       
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM admin WHERE username = %s AND password = %s', (username, password,))
+       
+        admin = cursor.fetchone()
+        
+        if admin:
+           
+            session['loggedin'] = True
+            session['id'] = admin['id']
+            session['username'] = admin['username']
+
+            
+   
+        else: request.method == 'POST' and 'username' in request.form and 'password' in request.form
         
         
         username = request.form['username']
@@ -40,22 +59,22 @@ def login():
             session['id'] = pythonlogin['id']
             session['username'] = pythonlogin['username']
 
-            return render_template('main.html', msg=msg)
+            
            
         else:
             
             msg = 'Incorrect username/password!'
     
-    return render_template('index.html')
+    return render_template('main.html')
 
-app.route('/project/logout')
+@app.route('/project/logout')
 def logout():
     
    session.pop('loggedin', None)
    session.pop('id', None)
    session.pop('username', None)
    
-   return redirect(url_for('Signin'))
+   return redirect(url_for('index'))
 
 @app.route('/project/register', methods=['GET', 'POST'])
 def register():
@@ -81,9 +100,7 @@ def register():
             msg = 'Please fill out the form!'
         else:
            
-            hash = password + app.secret_key
-            hash = hashlib.sha1(hash.encode())
-            password = hash.hexdigest()
+            
             
             cursor.execute('INSERT INTO pythonlogin VALUES (NULL, %s, %s, %s)', (username, password, email,))
             mysql.connection.commit()
@@ -94,7 +111,30 @@ def register():
        
         msg = 'Please fill out the form!'
     
-    return render_template('main.html', msg=msg)
+    return render_template('Signin.html', msg=msg)
+
+@app.route('/project/home')
+def home():
+    
+    if 'loggedin' in session:
+       
+        return render_template('main.html', username=session['username'])
+    
+    return redirect(url_for('login'))
+
+@app.route('/project/profile')
+def profile():
+    
+    if 'loggedin' in session:
+        
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM pythonlogin WHERE id = %s', (session['id'],))
+        account = cursor.fetchone()
+        
+        return render_template('profile.html', account=account)
+    
+    return redirect(url_for('login'))
+
 
 @app.route('/')
 def index():
@@ -109,9 +149,7 @@ def Signin():
 def Reg():
     return render_template('Reg.html')
 
-@app.route('/password')
-def password():
-    return render_template('password.html')
+
 
 @app.route('/project/main')
 def main():
@@ -121,13 +159,13 @@ def main():
 def base():
     return render_template('base.html')
 
-@app.route('/project/profile')
-def profile():
-    return render_template('profile.html')
+
 
 @app.route('/project/marriage')
 def marriage():
     return render_template('marriage.html')
+
+
 
 @app.route('/project/HIMTEE')
 def HIMTEE():
