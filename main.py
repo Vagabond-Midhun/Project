@@ -59,13 +59,13 @@ def login():
             session['id'] = pythonlogin['id']
             session['username'] = pythonlogin['username']
 
-            
+            return render_template('main.html')  
            
         else:
             
             msg = 'Incorrect username/password!'
     
-    return render_template('main.html')
+    return render_template('Signin.html',msg=msg)
 
 @app.route('/project/logout')
 def logout():
@@ -81,37 +81,55 @@ def register():
    
     msg = ''
     
-    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form and 'phoneno' in request.form and 'confirm_password' in request.form and 'content' in request.form :
+        
         
         username = request.form['username']
         password = request.form['password']
+        confirm_password = request.form['confirm_password']
         email = request.form['email']
+        phoneno = request.form['phoneno']
+        content = request.form['content']
+        
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM pythonlogin WHERE username = %s', (username,))
         pythonlogin = cursor.fetchone()
         
         if pythonlogin:
             msg = 'Account already exists!'
-        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
-            msg = 'Invalid email address!'
+            return render_template('Reg.html',msg=msg)
+        
         elif not re.match(r'[A-Za-z0-9]+', username):
             msg = 'Username must contain only characters and numbers!'
+            return render_template('Reg.html',msg=msg)
+        
+        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+            msg = 'Invalid email address!'
+            return render_template('Reg.html',msg=msg)
+         
+        elif password != confirm_password:
+            msg = 'Password and confirm password should be the same'
+            return render_template('Reg.html',msg=msg)
+           
+        elif not phoneno.isdigit () or len(phoneno) != 10:
+            msg = 'Please enter a VALID phone number'
+            return render_template('Reg.html',msg=msg)
+        
         elif not username or not password or not email:
             msg = 'Please fill out the form!'
+            return render_template('Reg.html',msg=msg)
+        
         else:
            
             
             
-            cursor.execute('INSERT INTO pythonlogin VALUES (NULL, %s, %s, %s)', (username, password, email,))
+            cursor.execute('INSERT INTO pythonlogin VALUES (NULL, %s, %s, %s,%s,%s)', (username, password, email,phoneno,content,))
             mysql.connection.commit()
+           
             msg = 'You have successfully registered!'
 
-            
-    elif request.method == 'POST':
-       
-        msg = 'Please fill out the form!'
+            return render_template('Signin.html',msg=msg)
     
-    return render_template('Signin.html', msg=msg)
 
 @app.route('/project/home')
 def home():
@@ -155,11 +173,17 @@ def Reg():
 def main():
     return render_template('main.html')
 
+@app.route('/project/creation')
+def creation():
+    return render_template('creation.html')
+
 @app.route('/project/base')
 def base():
     return render_template('base.html')
 
-
+@app.route('/terms')
+def terms():
+    return render_template('terms.html')
 
 @app.route('/project/marriage')
 def marriage():
