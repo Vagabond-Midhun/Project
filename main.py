@@ -40,7 +40,19 @@ def login():
             session['id'] = admin['id']
             session['username'] = admin['username']
 
-            
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute('SELECT * FROM admin WHERE id = %s', (session['id'],))
+            account = cursor.fetchone()
+
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute('SELECT * FROM events')
+            events = cursor.fetchone()
+
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute('SELECT * FROM pythonlogin')
+            users = cursor.fetchone()
+
+            return render_template('admin.html', account=account, events=events, users=users)
    
         else: request.method == 'POST' and 'username' in request.form and 'password' in request.form
         
@@ -58,6 +70,7 @@ def login():
             session['loggedin'] = True
             session['id'] = pythonlogin['id']
             session['username'] = pythonlogin['username']
+
 
             return render_template('main.html')  
            
@@ -123,13 +136,37 @@ def register():
            
             
             
-            cursor.execute('INSERT INTO pythonlogin VALUES (NULL, %s, %s, %s,%s,%s)', (username, password, email,phoneno,content,))
+            cursor.execute('INSERT INTO pythonlogin VALUES (NULL, %s, %s, %s,%s,%s,NULL,NULL,NULL,NULL,NULL)', (username, password, email,phoneno,content,))
             mysql.connection.commit()
            
             msg = 'You have successfully registered!'
 
             return render_template('Signin.html',msg=msg)
+        
+@app.route('/project/create', methods=['GET', 'POST'])
+def create():
+
+    msg = ''
+
+    if request.method == 'POST' and 'username' in request.form and 'image' in request.form and 'Title' in request.form and 'About' in request.form and 'Highlights' in request.form and 'From' in request.form and 'To' in request.form and 'Venue' in request.form :
     
+
+        username = request.form['username']
+        image = request.form['image']
+        Title = request.form['Title']
+        About = request.form['About']
+        Highlights = request.form['Highlights']
+        From = request.form['From']
+        To = request.form['To']
+        Venue = request.form['Venue']
+
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('INSERT INTO events VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)', (username,image,Title,About,Highlights,From,To,Venue,))
+        mysql.connection.commit()
+
+        msg = 'Your event has been successfully completed'
+
+    return render_template('creation.html', msg=msg)
 
 @app.route('/project/home')
 def home():
@@ -140,16 +177,38 @@ def home():
     
     return redirect(url_for('login'))
 
+
+
+
 @app.route('/project/profile')
 def profile():
     
     if 'loggedin' in session:
+        
         
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM pythonlogin WHERE id = %s', (session['id'],))
         account = cursor.fetchone()
         
         return render_template('profile.html', account=account)
+    
+    return redirect(url_for('login'))
+
+@app.route('/project/', methods=['GET', 'POST'])
+def join():
+
+    if request.method == 'POST' and 'add' in request.form:
+
+        add = request.form['add']    
+    
+        if 'loggedin' in session:
+
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute ('UPDATE pythonlogin SET add1 = %s WHERE id = %s', (add,session['id']))
+            cursor.execute('SELECT * FROM pythonlogin WHERE id = %s', (session['id'],))
+            account = cursor.fetchone()
+        
+            return render_template('profile.html', account=account)
     
     return redirect(url_for('login'))
 
@@ -167,15 +226,19 @@ def Signin():
 def Reg():
     return render_template('Reg.html')
 
+@app.route('/project/creation')
+def creation():
 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM pythonlogin WHERE id = %s', (session['id'],))
+    account = cursor.fetchone()
+    return render_template('creation.html',account=account)
 
 @app.route('/project/main')
 def main():
     return render_template('main.html')
 
-@app.route('/project/creation')
-def creation():
-    return render_template('creation.html')
+
 
 @app.route('/project/base')
 def base():
@@ -184,6 +247,7 @@ def base():
 @app.route('/terms')
 def terms():
     return render_template('terms.html')
+
 
 @app.route('/project/marriage')
 def marriage():

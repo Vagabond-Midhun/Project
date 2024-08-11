@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body>
+    <h1>WELCOME ADMIN</h1>
+    <div>
+        <p>Admin account details:</p>
+        <table>
+            <tr>
+                <td>Username:</td>
+                <td>{{ account['username'] }}</td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td>{{ account['password'] }}</td>
+            </tr>
+            
+        </table>
+    </div>
+    <div>
+        <p>Event details are below:</p>
+        <table bgcolor="black" width="1000">
+            <tr bgcolor="gray">
+                <th width="100">Username</th>
+                <th width="100">Image</th>
+                <th width="100">Title</th>
+                <th width="100">About</th>
+                <th width="100">Highlights</th>
+                <th width="100">From</th>
+                <th width="100">To</th>
+                <th width="100">Venue</th>
+                <th width="100">Edit</th>
+                <th width="100">Delete</th>
+            </tr>
+            <tr bgcolor="white">
+                <td>{{ events['username'] }}</td>
+                <td>{{ events['image'] }}</td>
+                <td>{{ events['Title'] }}</td>
+                <td>{{ events['About'] }}</td>
+                <td>{{ events['Highlights'] }}</td>
+                <td>{{ events['From'] }}</td>
+                <td>{{ events['To'] }}</td>
+                <td>{{ events['Venue'] }}</td>
+                <td><a href="">edit</a></td>
+                <td><a href="">delete</a></td>
+
+            </tr>
+            
+        </table>
+    </div>
+    <div>
+        <p>Event details are below:</p>
+        <table bgcolor="black" width="1300">
+            <tr bgcolor="gray">
+                <th width="100">id</th>
+                <th width="100">Username</th>
+                <th width="100">password</th>
+                <th width="100">email</th>
+                <th width="100">phoneno</th>
+                <th width="100">content</th>
+                <th width="100">add1</th>
+                <th width="100">add2</th>
+                <th width="100">add3</th>
+                <th width="100">add4</th>
+                <th width="100">add5</th>
+                <th width="100">Edit</th>
+                <th width="100">Delete</th>
+            </tr>
+            <tr bgcolor="white">
+                <td>{{ users['id'] }}</td>
+                <td>{{ users['username'] }}</td>
+                <td>{{ users['password'] }}</td>
+                <td>{{ users['email'] }}</td>
+                <td>{{ users['phoneno'] }}</td>
+                <td>{{ users['content'] }}</td>
+                <td>{{ users['add1'] }}</td>
+                <td>{{ users['add2'] }}</td>
+                <td>{{ users['add3'] }}</td>
+                <td>{{ users['add4'] }}</td>
+                <td>{{ users['add5'] }}</td>
+                <td><a href="">edit</a></td>
+                <td><a href="">delete</a></td>
+            </tr>
+            
+        </table>
+    </div>
+   
+</body>
+</html>
